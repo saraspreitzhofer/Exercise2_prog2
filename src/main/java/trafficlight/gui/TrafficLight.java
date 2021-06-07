@@ -22,7 +22,7 @@ public class TrafficLight extends Light implements Observer{
     //TODO implement a part of the pattern here
 
     @Override
-    public void update(Object o) {
+    public void update() {
         if(isOn()){
             turnOn(false);
         } else{

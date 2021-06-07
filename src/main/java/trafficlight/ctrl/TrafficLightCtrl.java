@@ -45,7 +45,8 @@ public class TrafficLightCtrl {
                 previousState = currentState;
                 //TODO useful to update the current state and the old one
                 //implemented in nextState()
-                //notifyObservers(getColor());
+                //currentState.notifyObservers();
+                //previousState.notifyObservers();
                 return yellowState;
             }
             @Override
@@ -60,7 +61,8 @@ public class TrafficLightCtrl {
                 previousState = currentState;
                 //TODO useful to update the current state and the old one
                 //implemented in nextState()
-                //notifyObservers(getColor());
+                //currentState.notifyObservers();
+                //previousState.notifyObservers();
                 return yellowState;
             }
             @Override
@@ -76,13 +78,15 @@ public class TrafficLightCtrl {
                     previousState = currentState;
                     //TODO useful to update the current state and the old one
                     //implemented in nextState()
-                    //notifyObservers(getColor());
+                    //currentState.notifyObservers();
+                    //previousState.notifyObservers();
                     return redState;
                 }else {
                     previousState = currentState;
                     //TODO useful to update the current state and the old one
                     //implemented in nextState()
-                    //notifyObservers(getColor());
+                    //currentState.notifyObservers();
+                    //previousState.notifyObservers();
                     return greenState;
                 }
             }
@@ -123,7 +127,7 @@ public class TrafficLightCtrl {
 
     public void nextState() {
         currentState = currentState.getNextState();
-        //State.notifyObservers(currentState.getColor());
+
         currentState.notifyObservers();
         previousState.notifyObservers();
     }
