@@ -20,7 +20,7 @@ public class TrafficLightCtrl {
         gui = new TrafficLightGui(this);
         gui.setVisible(true);
         //TODO useful to update the current state
-        currentState.notifyObservers();
+        currentState.notifyObservers();                     // turn on the light which should start
     }
     public static TrafficLightCtrl getInstance(){
         if(instance == null){
@@ -45,8 +45,8 @@ public class TrafficLightCtrl {
                 previousState = currentState;
                 //TODO useful to update the current state and the old one
                 //implemented in nextState()
-                //currentState.notifyObservers();
-                //previousState.notifyObservers();
+                //this.notifyObservers();           // turn off green light
+                //yellowState.notifyObservers();    // turn on yellow light
                 return yellowState;
             }
             @Override
@@ -61,8 +61,8 @@ public class TrafficLightCtrl {
                 previousState = currentState;
                 //TODO useful to update the current state and the old one
                 //implemented in nextState()
-                //currentState.notifyObservers();
-                //previousState.notifyObservers();
+                //notifyObservers();                // turn off red light
+                //yellowState.notifyObservers();    // turn on yellow light
                 return yellowState;
             }
             @Override
@@ -78,15 +78,16 @@ public class TrafficLightCtrl {
                     previousState = currentState;
                     //TODO useful to update the current state and the old one
                     //implemented in nextState()
-                    //currentState.notifyObservers();
-                    //previousState.notifyObservers();
+                    //this.notifyObservers();       // turn off yellow light
+                    //redState.notifyObservers();   // turn on red light
                     return redState;
                 }else {
                     previousState = currentState;
                     //TODO useful to update the current state and the old one
                     //implemented in nextState()
+                    //this.notifyObservers();       // turn off yellow light
                     //currentState.notifyObservers();
-                    //previousState.notifyObservers();
+                    //greenState.notifyObservers(); // turn on green light
                     return greenState;
                 }
             }

@@ -16,5 +16,6 @@ public class Subject {
         for(Observer observer : observerCollection){
             observer.update();
         }
+        //or: observerCollection.forEach(Observer::update);
     }
 }
